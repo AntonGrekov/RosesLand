@@ -6,15 +6,15 @@ from zero. You can find this in **mini-cart.js** file. I decided not to fix some
 It adds/removes and displays items in cart in a minicart block if you move cursor to a cart icon. 
 
 # Features in this project:
-**Swiper in a slider role**
+*Swiper in a slider role**
 
-**Pure JS/jQuery code, functions, to add/remove/display cart items**
+*Pure JS/jQuery code, functions, to add/remove/display cart items**
 
-**Pug/SCSS markup, separate files, clear code**
+*Pug/SCSS markup, separate files, clear code**
 
-**Scrolling animation per screens made on JS by myself, without plugins**
+*Scrolling animation per screens made on JS by myself, without plugins**
 
-**Price prettier function to show prices in a better way**
+*Price prettier function to show prices in a better way**
 
 
 
