@@ -17,6 +17,10 @@ It adds/removes and displays items in cart in a minicart block if you move curso
 **Price prettier function to show prices in a better way**
 
 
+
+
+
+
 Перевод на русский:
 TODO :)
 
