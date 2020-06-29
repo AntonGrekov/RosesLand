@@ -1,0 +1,46 @@
+header.header.js-header
+	.header__inner
+		.header__block
+			.header__element
+				button.nav-toggle.js-nav-toggle(type="button")
+					.nav-toggle__icon
+						.nav-toggle__element
+						.nav-toggle__element
+						.nav-toggle__element
+				include ../helpers/mixins/logo
+				+logo()
+			.header__element
+				include ../helpers/mixins/main-nav__item
+				nav.main-nav.js-main-nav
+					ul.main-nav__list
+					
+						+main-nav__item({
+							title: "Специальные предложения",
+							active: true
+						})
+						+main-nav__item({
+							title: "Розы"
+						})
+						+main-nav__item({
+							title: "Букеты"
+						})
+						+main-nav__item({
+							title: "Букет невесты"
+						})
+						+main-nav__item({
+							title: "Услуги"
+						})
+		.header__block
+			.header-list
+				.header-list__item
+					.header-info
+						.header-info__text #{config.phone}
+						.header-info__text
+							- var mail = 'mailto:' + config.email;
+							a.header-info__link(href=mail) #{config.email}
+				.header-list__item
+					include ../helpers/mixins/socials
+					+socials({theme: 'header'})
+				.header-list__item
+					include ../helpers/mixins/mini-cart
+					+mini-cart({label: ""})

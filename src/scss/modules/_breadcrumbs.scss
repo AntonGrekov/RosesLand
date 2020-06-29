@@ -1,0 +1,33 @@
+.breadcrumbs {
+	font-size: 28px;
+	line-height: 1;
+	font-family: $font-accent;
+	color: $brand-color-purple;
+	text-transform: uppercase;
+	
+	@media screen and (max-width: 840px) {
+		font-size: 20px;
+	}
+
+	&__item {
+		display: inline-block;
+		
+		&::after {
+			content: "/";
+		}
+		
+		&:last-child::after {
+			content: none;
+		}
+	}
+
+	&__link {
+		color: $brand-color-purple;
+		text-decoration: none;
+		
+		&:hover {
+			color: $brand-color-primary;
+			text-decoration: underline;
+		}
+	}
+}

@@ -1,0 +1,78 @@
+extends extends/default
+
+block content
+	include helpers/mixins/container
+	include helpers/mixins/breadcrumbs
+	include helpers/mixins/entity-card
+
+	-
+		var breadcrumbs = {
+			extended: 'heading',
+			list: [
+				{
+					title: 'Корзина'
+				}
+			]
+		}
+
+	main.main
+		+container({width: 'desktop'})
+			article.section
+				.section__head
+					.heading
+						h1.heading__title.title Оформление
+						+breadcrumbs(breadcrumbs)
+						h2.heading__subtitle.title.title_sub Ваш заказ
+				.section__body
+					include helpers/mixins/cart-detail__row_body
+
+					.cart
+						.cart__primary
+							.cart-detail
+								.cart-detail__row.cart-detail__row_head
+									.cart-detail__cell.cart-detail__cell_full
+										.cart-detail__title Название
+									.cart-detail__cell.cart-detail__cell_medium
+										.cart-detail__title Кооличество
+									.cart-detail__cell.cart-detail__cell_medium
+										.cart-detail__title Цена Р.
+									.cart-detail__cell.cart-detail__cell_small
+								+cart-detail__row_body({
+								    title: 'Название букета',
+								    image: 'i/bitmapped/demo/cart-card.jpg',
+									list: [
+										{
+										    label: 'Вариант:',
+										    value: '15 роз'
+										},
+										{
+										    label: 'Упаковка:',
+										    value: 'бумага'
+										}
+									],
+									count: '1',
+									price: '1850'
+								})
+								+cart-detail__row_body({
+								    title: 'Название букета',
+								    image: 'i/bitmapped/demo/cart-card.jpg',
+									list: [
+										{
+										    label: 'Вариант:',
+										    value: '15 роз'
+										},
+										{
+										    label: 'Упаковка:',
+										    value: 'бумага'
+										}
+									],
+									count: '1',
+									price: '1850'
+								})
+						.cart__secondary
+							include helpers/mixins/cart-action
+							+cart-action({
+							    title: 'Всего 2 товара для оформления',
+								price: '3700 Руб.',
+								url: 'ordering.html'
+							})

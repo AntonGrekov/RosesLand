@@ -1,0 +1,302 @@
+.product {
+	@include flexbox();
+	
+	padding-bottom: 60px;
+	
+	@media screen and (max-width: 1024px) {
+		display: block;
+	}
+	
+	&__cover {
+		@include flex($fg: 1);
+		width: 100%;
+		max-width: 775px;
+		margin-right: 70px;
+		
+		@media screen and (max-width: 1024px) {
+			max-width: 700px;
+			margin: 0 auto 40px;
+		}
+	}
+	
+	&__detail {
+		max-width: 870px;
+
+		@media screen and (max-width: 1600px) {
+			max-width: 740px;
+		}
+
+		@media screen and (max-width: 1280px) {
+			max-width: 600px;
+		}
+		
+		@media screen and (max-width: 1024px) {
+			max-width: 100%;
+		}
+	}
+}
+
+.simple-gallery {
+	&__cover {
+		margin-bottom: 20px;
+		margin-bottom: 1rem;
+		padding-bottom: 100%;
+
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	
+	&__nav-image {
+		padding-bottom: 100%;
+
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		
+		cursor: pointer;
+	}
+}
+
+.tab {
+	&__nav {
+		@include flexbox();
+		@include flex-wrap($value: wrap);
+		margin: 0;
+		padding: 0;
+		
+		border: 1px solid #000000;
+
+		list-style-type: none;
+	}
+
+	&__nav-item {
+		@include flex($fg: 1);
+		@include flexbox();
+		@include justify-content($value: center);
+		@include align-items($value: center);
+		box-sizing: border-box;
+		
+		font-weight: 400;
+		font-size: 25px;
+		line-height: 1.1;
+		font-family: $font-accent-alt;
+		text-align: center;
+		text-transform: uppercase;
+
+		border-right: 1px solid #000000;
+		
+		@media screen and (max-width: 1024px) {
+			-ms-flex: auto;
+			-webkit-flex: auto;
+			flex: auto;
+			margin-right: -1px;
+			margin-bottom: -1px;
+
+			border-bottom: 1px solid #000000;
+		}
+		
+		&:last-child {
+			border-right: none;
+		}
+		
+		&_active {
+			background: $brand-color-primary;
+		}
+	}
+	
+	&__nav-link {
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		padding: 8px;
+		
+		color: #000000;
+		text-decoration: none;
+		
+		&:hover {
+			color: #000000;
+			text-decoration: none;
+		}
+	}
+
+	&__content-block {
+		padding: 40px 0;
+		display: none;
+		
+		font-size: 25px;
+		line-height: 1.2;
+		
+		&_active {
+			display: block;
+		}
+		
+		p {
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.accordeon-list {
+	&__item {
+		margin-bottom: 40px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.accordeon {
+	&__title {
+		font-size: 36px;
+		line-height: 1.1;
+		font-family: $font-accent;
+		text-transform: uppercase;
+	}
+	
+	&__title-link {
+		cursor: pointer;
+	}
+	
+	&__title-icon {
+		display: inline-block;
+		width: 14px;
+		height: 15px;
+		margin-left: 20px;
+		
+		transition: transform 0.2s;
+	}
+	
+	&__title-svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	
+	&__content {
+		padding: 12px 0 0;
+	}
+	
+	&_active &__title-icon {
+		transform: rotate(180deg);
+	}
+	
+	p {
+		&:first-child {
+			margin-top: 0;
+		}
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.product-detail {
+	&__primary {
+		@include flexbox();
+		@include justify-content($value: space-between);
+		margin: 0 0 20px;
+	}
+}
+
+.product-config {
+	line-height: 1;
+
+	&__block_horizontal {
+		@include flexbox();
+		@include align-items($value: center);
+	}
+
+	&__price {
+		display: inline-block;
+		margin: 0 20px 0 0;
+
+		font-size: 90px;
+		font-family: $font-accent-alt;
+		text-transform: uppercase;
+		
+		@media screen and (max-width: 1480px) {
+			font-size: 60px;
+		}
+	}
+	
+	&__price-currency {
+		margin-left: 0.25em;
+
+		font-size: 50px;
+	}
+	
+	&__count {
+		display: inline-block;
+	}
+}
+
+.form-count {
+	@include flexbox();
+
+	&__field {
+		box-sizing: border-box;
+		width: 60px;
+		height: 62px;
+		margin: 0;
+		padding: 0;
+
+		font-family: $font-accent-alt;
+		text-transform: uppercase;
+		text-align: center;
+		
+		border: none;
+		box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+		-ms-appearance: none;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+	}
+	
+	input[type="number"] {
+		-moz-appearance: textfield;
+	}
+	
+	&__nav {
+		@include flexbox();
+		@include flex-direction($value: column);
+		@include justify-content($value: space-between);
+		margin-left: 8px;
+	}
+	
+	&__nav-button {
+		text-align: center;
+
+		background: #ffffff;
+		border: none;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.21);
+		cursor: pointer;
+	}
+
+	&_size_large &__field {
+		font-size: 60px;
+		
+		@media screen and (max-width: 1280px) {
+			font-size: 40px;
+		}
+	}
+	
+	&_size_large &__nav-button {
+		width: 26px;
+		height: 26px;
+		padding: 0;
+
+		font-weight: 300;
+		font-size: 46px;
+		line-height: 26px;
+		font-family: $font-accent;
+	}
+}

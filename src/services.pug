@@ -1,0 +1,50 @@
+extends extends/default
+
+block content
+	include helpers/mixins/container
+	include helpers/mixins/breadcrumbs
+	include helpers/mixins/entity-card
+
+	-
+		var breadcrumbs = {
+			extended: 'heading',
+			list: [
+				{
+					title: 'Услуги'
+				}
+			]
+		}
+
+	main.main
+		+container({width: 'desktop'})
+			article.section
+				.section__head
+					.heading
+						h1.heading__title.title Услуги
+						+breadcrumbs(breadcrumbs)
+				.section__body
+					include helpers/mixins/about-card
+					.box-list
+						.box-list__item
+							+about-card({
+								title: 'Шары',
+								description: 'Постмодернизм, так или иначе, просветляет персональный меланхолик. Декаданс, в том числе, дает горизонт ожидания. <br>В работе "Парадокс об актере" Дидро обращал внимание на то, как реконструктивный подход использует глубокий катарсис. Типическое многопланово образует неизменный декаданс. Притча, как бы это ни казалось парадоксальным, свободна.',
+								image: 'i/bitmapped/services/ball.jpg',
+								url: 'javascript:void(0);'
+							})
+						.box-list__item
+							+about-card({
+								title: 'Игрушки',
+								description: 'Постмодернизм, так или иначе, просветляет персональный меланхолик. Декаданс, в том числе, дает горизонт ожидания. <br>В работе "Парадокс об актере" Дидро обращал внимание на то, как реконструктивный подход использует глубокий катарсис. Типическое многопланово образует неизменный декаданс. Притча, как бы это ни казалось парадоксальным, свободна.',
+								image: 'i/bitmapped/services/toys.jpg',
+								url: 'javascript:void(0);'
+							})
+						.box-list__item
+							+about-card({
+								title: 'Букет невесты',
+								description: 'Постмодернизм, так или иначе, просветляет персональный меланхолик. Декаданс, в том числе, дает горизонт ожидания. <br>В работе "Парадокс об актере" Дидро обращал внимание на то, как реконструктивный подход использует глубокий катарсис. Типическое многопланово образует неизменный декаданс. Притча, как бы это ни казалось парадоксальным, свободна.',
+								image: 'i/bitmapped/services/bouquet.jpg',
+								url: 'javascript:void(0);'
+							})
+
+	include modules/contact

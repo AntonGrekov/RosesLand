@@ -1,0 +1,18 @@
+mixin switch(options)
+	- options = options || {};
+	- var name = options.name || options.id;
+	- var classes = [];
+
+	- classes.push('switch_type_' + options.type);
+
+	if options.theme
+		- classes.push('switch_theme_' + options.theme);
+
+	if options.special
+		- classes.push('switch_special_' + options.special);
+
+	.switch(class=classes)
+		input.switch__input(type=options.type, id=options.id, name=name)
+		label.switch__label(for=options.id)
+			.switch__icon
+			.switch__text !{options.label}

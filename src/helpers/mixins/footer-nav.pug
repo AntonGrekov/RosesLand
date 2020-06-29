@@ -1,0 +1,13 @@
+include footer-nav__item
+
+mixin footer-nav(options)
+	- options = options || {};
+
+	.footer-nav
+		.footer-nav__title= options.title
+		ul.footer-nav__list
+			each item in options.list
+				+footer-nav__item({
+					title: item.title,
+					url: item.url
+				})

@@ -1,0 +1,26 @@
+mixin cart-detail__row_body(options)
+	- options = options || {};
+
+	.cart-detail__row.cart-detail__row_body
+		.cart-detail__cell.cart-detail__cell_full
+			.cart-card
+				.cart-card__cover
+					img.cart-card__cover-image(src=options.image, alt="")
+				.cart-card__content
+					.cart-card__head
+						.cart-card__title= options.title
+					.cart-card__body
+						.cart-card__list
+							each item in options.list
+								.cart-card__list-item
+									.cart-card__list-label= item.label
+									.cart-card__list-value= item.value
+		.cart-detail__cell.cart-detail__cell_medium
+			.cart-count= options.count
+		.cart-detail__cell.cart-detail__cell_medium
+			.cart-price= options.price
+		.cart-detail__cell.cart-detail__cell_small
+			button.cart-remove(type="button", title="Удалить")
+				span.cart-remove__icon
+					svg.cart-remove__svg
+						use(xlink:href="#icon-close")

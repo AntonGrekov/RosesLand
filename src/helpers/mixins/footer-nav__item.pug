@@ -1,0 +1,5 @@
+mixin footer-nav__item(options)
+	- options = options || {};
+
+	li.footer-nav__item
+		a.footer-nav__link(href=options.url)= options.title

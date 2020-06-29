@@ -1,0 +1,10 @@
+mixin about-card(options)
+	- options = options || {};
+	- var imageStyle = 'background-image: url(' + options.image + ');'
+
+	a.about-card(href=options.url)
+		.about-card__cover(style=imageStyle)
+			.about-card__cover-overlay Подробнее
+		.about-card__content
+			.about-card__title= options.title
+			.about-card__description!= options.description

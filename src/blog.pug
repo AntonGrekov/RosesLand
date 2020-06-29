@@ -1,0 +1,65 @@
+extends extends/default
+
+block content
+	include helpers/mixins/container
+	include helpers/mixins/breadcrumbs
+	include helpers/mixins/entity-card
+
+	-
+		var breadcrumbs = {
+			extended: 'heading',
+			list: [
+				{
+					title: 'Блог'
+				}
+			]
+		}
+
+	main.main
+		+container({width: 'desktop'})
+			article.section
+				.section__head
+					.heading
+						h1.heading__title.title Блог
+						+breadcrumbs(breadcrumbs)
+				.section__body
+					.entity-cards
+						.entity-cards.grid-3-gutterLarge_tabletS-1
+							.entity-cards__block.col
+								+entity-card({
+									title: 'Свадебное оформление',
+									description: 'Классический реализм изящно иллюстрирует композиционный модернизм. Онтологический статус искусства монотонно заканчивает незначительный структурализм.',
+									image: 'i/bitmapped/blog-category/wedding-decoration.jpg'
+								})
+							.entity-cards__block.col
+								+entity-card({
+									title: 'Букеты для фотосъемок',
+									description: 'Классический реализм изящно иллюстрирует композиционный модернизм. Онтологический статус искусства монотонно заканчивает незначительный структурализм.',
+									image: 'i/bitmapped/blog-category/bouquets-for-photography.jpg'
+								})
+							.entity-cards__block.col
+								+entity-card({
+									title: 'Украшение дома',
+									description: 'Классический реализм изящно иллюстрирует композиционный модернизм. Онтологический статус искусства монотонно заканчивает незначительный структурализм.',
+									image: 'i/bitmapped/blog-category/home-decoration.jpg'
+								})
+							.entity-cards__block.col
+								+entity-card({
+									title: 'Свадебное оформление',
+									description: 'Классический реализм изящно иллюстрирует композиционный модернизм. Онтологический статус искусства монотонно заканчивает незначительный структурализм.',
+									image: 'i/bitmapped/blog-category/wedding-decoration.jpg'
+								})
+							.entity-cards__block.col
+								+entity-card({
+									title: 'Букеты для фотосъемок',
+									description: 'Классический реализм изящно иллюстрирует композиционный модернизм. Онтологический статус искусства монотонно заканчивает незначительный структурализм.',
+									image: 'i/bitmapped/blog-category/bouquets-for-photography.jpg'
+								})
+							.entity-cards__block.col
+								+entity-card({
+									title: 'Украшение дома',
+									description: 'Классический реализм изящно иллюстрирует композиционный модернизм. Онтологический статус искусства монотонно заканчивает незначительный структурализм.',
+									image: 'i/bitmapped/blog-category/home-decoration.jpg'
+								})
+
+	include modules/contact

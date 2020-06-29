@@ -1,0 +1,16 @@
+include socials__block
+
+mixin socials(options)
+	- options = options || {};
+	- var classes = [];
+
+	if options.theme
+		- classes.push('socials_' + options.theme);
+
+	.socials(class=classes)
+		each item in config.socials
+			+socials__block({
+				title: item.title,
+				url: item.url,
+				icon: item.icon
+			})

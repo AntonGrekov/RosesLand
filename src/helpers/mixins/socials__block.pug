@@ -1,0 +1,12 @@
+mixin socials__block(options)
+	- options = options || {};
+
+	- var iconClasses = [];
+	- var icon = '#icon-' + options.icon;
+
+	- iconClasses.push('socials__icon_' + options.icon);
+
+	a.socials__block(href=options.url, title=options.title, target="_blank")
+		.socials__icon(class=iconClasses)
+			svg.socials__svg
+				use(xlink:href=icon)

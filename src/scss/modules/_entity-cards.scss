@@ -1,0 +1,14 @@
+.entity-cards {
+	position: relative;
+	&_vertical &__block {
+		margin-bottom: 40px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.entity-cards.js-goods {
+	visibility: hidden;
+}

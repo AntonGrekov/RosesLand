@@ -1,0 +1,76 @@
+.alternative-layout {
+	&__section {
+		@media screen and (max-width: 840px) {
+			padding-bottom: 40px;
+		}
+
+		&_blog {
+			min-height: 840px;
+			position: relative;
+			z-index: 5;
+
+
+			background: #a19069 url(../i/bitmapped/main/main-blog-bg.jpg) no-repeat 0%  100%;
+			background-size: cover;
+			background-attachment: fixed;
+			
+			@media screen and (max-width: 840px) {
+				min-height: 0;
+				margin-bottom: 40px;
+			}
+			
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;right: 0;left: 0;bottom: 0;
+				background: #000;
+				opacity: .5;
+				z-index: -1;
+			}
+		}
+		
+		
+		&_video {
+			position: relative;
+			z-index: 5;
+			margin-top: -130px;
+
+			@media screen and (max-width: 840px) {
+				margin-top: 0;
+			}
+		}
+	}
+	
+	&__head {
+		margin-bottom: 20px;
+	}
+
+	&__section_blog &__head-title {
+		position: relative;
+
+	}
+	
+	&__section_video &__head {
+		margin-bottom: 80px;
+		
+		@media screen and (max-width: 840px) {
+			margin-bottom: 40px;
+		}
+		
+		@media screen and (max-width: 600px) {
+			margin-bottom: 20px;
+		}
+	}
+	
+	&__section_video &__head-title-link {
+		
+		@media screen and (max-width: 840px) {
+			color: currentColor;
+			
+			&:hover {
+				color: currentColor;
+			}
+		}
+	}
+}

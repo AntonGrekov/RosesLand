@@ -1,0 +1,21 @@
+mixin from-field(options)
+	- options = options || {};
+	- var classes = [];
+	- var controlClasses = [];
+	- var type = options.type || 'text';
+
+	if options.theme
+		- classes.push('from-field_theme_' + options.theme);
+
+	.from-field(class=classes)
+
+		if options.type === 'textarea'
+			textarea.from-field__control.from-field__control_textarea(id=options.id, required=options.required, minlength="1", placeholder=options.placeholder)
+		else
+			input.from-field__control(type=type, id=options.id, required=options.required)
+
+		if options.label
+			label.from-field__label(for=options.id)= options.label
+
+				if options.required
+					span.from-field__required *

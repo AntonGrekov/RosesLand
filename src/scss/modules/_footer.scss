@@ -1,0 +1,40 @@
+.footer {
+	padding: 30px 0;
+	
+	font-size: 30px;
+	font-family: $font-accent;
+	color: #ffffff;
+
+	background: #000000;
+
+	&__row {
+		@include flexbox();
+		@include justify-content($value: space-around);
+		@include flex-wrap($value: wrap);
+
+		&_align-left {
+			@include justify-content($value: start);
+		}
+
+		@media screen and (max-width: 756px){
+			display: block;
+			text-align: center;
+		}
+	}
+	
+	&__col {
+		padding: 0 40px 40px 0;
+		
+		@media screen and (max-width: 600px) {
+			padding: 0 20px 20px 0;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+
+		&_no-spacing {
+			padding: 0;
+		}
+	}
+}

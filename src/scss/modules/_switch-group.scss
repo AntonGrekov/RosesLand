@@ -1,0 +1,17 @@
+.switch-group {
+	&__block {
+		margin-bottom: 10px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&_spacing_large &__block {
+		margin-bottom: 40px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,109 @@
+extends extends/default
+
+block content
+	include helpers/mixins/container
+	include helpers/mixins/breadcrumbs
+	include helpers/mixins/entity-card
+
+	-
+		var breadcrumbs = {
+			extended: 'heading',
+			list: [
+				{
+					title: 'Оформление'
+				}
+			]
+		}
+
+	main.main
+		+container({width: 'desktop'})
+			article.section
+				.section__head
+					.heading
+						h1.heading__title.title Оформление
+						+breadcrumbs(breadcrumbs)
+						h2.heading__subtitle.title Укажите данные для оформления заказа
+				.section__body
+					include helpers/mixins/cart-detail__row_body
+					include helpers/mixins/from-field
+					include helpers/mixins/switch
+
+					form.cart
+						.cart__primary
+							.form
+								.form__body.form__body_flex-column
+									.form__body-col
+										.form__group
+											+from-field({
+												label: 'Ваше имя',
+												id: 'order-name',
+												required: true
+											})
+										.form__group.form__group_layout_two-column
+											.form__group-block
+												+from-field({
+													label: 'Телефон',
+													id: 'order-phone',
+													required: true
+												})
+											.form__group-block
+												+from-field({
+													label: 'E-mail',
+													id: 'order-email',
+													required: true
+												})
+										.form__group
+											+from-field({
+                                                label: 'Выберите дату доставки и время',
+                                                id: 'order-date'
+                                            })
+										.form__group
+											+from-field({
+                                                id: 'order-time'
+                                            })
+										.form__group
+											+from-field({
+                                                label: 'Адрес:',
+                                                id: 'order-address'
+                                            })
+									.form__body-col
+										.switch-group.switch-group_spacing_large
+											.switch-group__block
+												+switch({
+													label: 'Наличными курьеру',
+													id: 'order-cash',
+													name: 'order-type-payment',
+													type: 'radio'
+												})
+											.switch-group__block
+												+switch({
+													label: 'Картой курьеру',
+													id: 'order-card',
+													name: 'order-type-payment',
+													type: 'radio'
+												})
+						.cart__secondary
+							.cart__secondary-body
+								include helpers/mixins/cart-action
+								+cart-action({
+									title: 'Сумма заказа',
+									price: '3700 Руб.',
+									productList: [
+										{
+											label: 'Тут будет название  букета',
+											value: '1850'
+										},
+										{
+											label: 'Тут будет название  букета',
+											value: '1850'
+										}
+									],
+									shipping: 'Цена доставки: 10% от стоимости букета + 5 р. за км.'
+								})
+							.cart__secondary-footer
+								+switch({
+									label: 'Я даю свое согласие на обработку персональных данных в соответствии с <a class="switch__link" href="javascript:void(0);">политикой конфиденциальности</a>',
+									id: 'user-agreement',
+									type: 'checkbox',
+									special: 'agreement'
+								})

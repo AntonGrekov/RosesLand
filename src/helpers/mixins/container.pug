@@ -1,0 +1,16 @@
+mixin container(options)
+	- options = options || {};
+	- var classes = [];
+	- var inner = [];
+
+	if options.width
+		- classes.push('container_width_' + options.width);
+
+	if options.theme
+		- classes.push('container_theme_' + options.theme);
+	if options.mod
+		- inner.push('container__inner_' + options.mod)
+
+	.container(class=classes)
+		.container__inner(class=inner)
+			block

@@ -1,0 +1,7 @@
+mixin gallery-item(options)
+   - options = options || {}
+
+   .gallery__item
+      img.gallery__item-img(src= options.img)
+      .gallery__item-desc
+         .gallery__item-text= options.description

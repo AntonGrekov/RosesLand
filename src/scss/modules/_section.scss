@@ -1,0 +1,28 @@
+.section {
+	&__head {
+		
+		@media screen and (max-width: 1024px) {
+			padding: 20px 0;
+		}
+	}
+	
+	&__body {
+		padding-top: 20px;
+		
+		@media screen and (max-width: 1024px) {
+			padding-top: 10px;
+		}
+	}
+	
+	&_no-spacing &__head {
+		padding: 0;
+	}
+	
+	&_no-spacing &__body {
+		padding: 0;
+	}
+	
+	&_compact &__head {
+		padding: 40px 0;
+	}
+}

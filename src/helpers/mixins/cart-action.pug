@@ -1,0 +1,20 @@
+mixin cart-action(options)
+	- options = options || {};
+
+	.cart-action
+		.cart-action__body
+			.cart-action__title= options.title
+			.cart-action__price= options.price
+			if options.productList
+				.cart-action__price-detail
+					each item in options.productList
+						.cart-action__price-detail-item
+							.cart-action__price-detail-label= item.label
+							.cart-action__price-detail-value= item.value
+			if options.shipping
+				.cart-action__shipping= options.shipping
+		.cart-action__footer
+			if options.url
+				a.button(href="ordering.html") Оформить
+			else
+				button.button(type="submit") Оформить

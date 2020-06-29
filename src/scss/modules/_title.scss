@@ -1,0 +1,90 @@
+.title {
+	margin: 0;
+	z-index: 3;
+	padding: 30px 0;
+
+	font-weight: 400;
+	font-size: 46px;
+	line-height: 1.1;
+	font-family: $font-accent;
+	text-transform: uppercase;
+	text-shadow: 0px 0.25em 0.02em rgba(0, 0, 0, 0.1);
+	
+	@media screen and (max-width: 840px) {
+		font-size: 24px;
+	}
+	
+	&__link {
+		position: relative;
+		cursor: pointer;
+
+		color: currentColor;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: currentColor;
+			text-decoration: none;
+		}
+	}
+
+	&_sub {
+		font-size: 36px;
+	
+		@media screen and (max-width: 840px) {
+			font-size: 18px;
+		}
+	}
+
+	&_bright {
+		padding: 6px 0;
+
+		font-size: 88px;
+		line-height: 1;
+		text-align: center;
+		color: $brand-color-tetriary;
+		
+	}
+
+	&_color-white {
+		color: #fff;
+	}
+
+	&_shadow-white {
+		text-shadow: 0px 0.20em 0.02em rgba(255, 255, 255, 0.1);
+	}
+	
+	&_main {
+		font-size: 88px;
+		line-height: 1;
+		text-align: center;
+		
+		@media screen and (max-width: 600px) {
+			font-size: 48px;
+		}
+	}
+
+	&_main &__link {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			width: 0;
+			height: 6px;
+			
+			background: currentColor;
+			
+			transition: width 0.2s;
+			
+			@media screen and (max-width: 600px) {
+				height: 3px;
+			}
+		}
+		
+		&:hover::before {
+			width: 0.9em;
+		}
+	}
+}

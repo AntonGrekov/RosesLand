@@ -1,0 +1,45 @@
+extends extends/default
+
+block content
+	include helpers/mixins/container
+	include helpers/mixins/breadcrumbs
+	include helpers/mixins/entity-card
+
+	-
+		var breadcrumbs = {
+			extended: 'heading',
+			list: [
+				{
+					title: 'Блог',
+					url: 'blog.html'
+				},
+				{
+					title: 'Свадебное оформление'
+				}
+			]
+		}
+
+	main.main
+		+container({width: 'desktop', theme: 'grad1'})
+			article.section
+				.section__head
+					.heading
+						h1.heading__title.title Свадебное оформление
+						+breadcrumbs(breadcrumbs)
+				.section__body
+					include helpers/mixins/article-list__item
+					.article-list
+						+article-list__item({
+						    image: 'i/bitmapped/blog-detail/demo.jpg'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia incidunt sequi inventore tempore aliquid quisquam suscipit minima fuga veritatis voluptas laboriosam obcaecati, cumque sed non at rem exercitationem amet accusantium aliquam pariatur ipsum esse. Esse dolores expedita veniam. Quia explicabo illo magni impedit laborum illum id, nam quam culpa accusamus!
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia incidunt sequi inventore tempore aliquid quisquam suscipit minima fuga veritatis voluptas laboriosam obcaecati, cumque sed non at rem exercitationem amet accusantium aliquam pariatur ipsum esse. Esse dolores expedita veniam. Quia explicabo illo magni impedit laborum illum id, nam quam culpa accusamus!
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia incidunt sequi inventore tempore aliquid quisquam suscipit minima fuga veritatis voluptas laboriosam obcaecati, cumque sed non at rem exercitationem amet accusantium aliquam pariatur ipsum esse. Esse dolores expedita veniam. Quia explicabo illo magni impedit laborum illum id, nam quam culpa accusamus!
+						+article-list__item({
+						    image: 'i/bitmapped/blog-detail/demo.jpg'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia incidunt sequi inventore tempore aliquid quisquam suscipit minima fuga veritatis voluptas laboriosam obcaecati, cumque sed non at rem exercitationem amet accusantium aliquam pariatur ipsum esse. Esse dolores expedita veniam. Quia explicabo illo magni impedit laborum illum id, nam quam culpa accusamus!
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia incidunt sequi inventore tempore aliquid quisquam suscipit minima fuga veritatis voluptas laboriosam obcaecati, cumque sed non at rem exercitationem amet accusantium aliquam pariatur ipsum esse. Esse dolores expedita veniam. Quia explicabo illo magni impedit laborum illum id, nam quam culpa accusamus!
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia incidunt sequi inventore tempore aliquid quisquam suscipit minima fuga veritatis voluptas laboriosam obcaecati, cumque sed non at rem exercitationem amet accusantium aliquam pariatur ipsum esse. Esse dolores expedita veniam. Quia explicabo illo magni impedit laborum illum id, nam quam culpa accusamus!
+
+	include modules/contact

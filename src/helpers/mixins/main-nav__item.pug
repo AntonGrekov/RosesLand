@@ -1,0 +1,10 @@
+mixin main-nav__item(options)
+	- options = options || {};
+	- var url = options.url || "javascript:void(0);";
+	- var classes = [];
+
+	if options.active
+		- classes.push('main-nav__item_active');
+
+	li.main-nav__item(class=classes)
+		a.main-nav__link(href=url)= options.title

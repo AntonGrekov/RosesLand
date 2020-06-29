@@ -1,0 +1,28 @@
+mixin feedback-item(options)
+   -
+      options = options || {};
+      var classes = [];
+
+      switch (options.class) {
+         case 0: 
+            classes.push('fb-block_tleft')
+            options.text = 'Оперативная обработка заказа; своевременная доставка; очень приемлемые цены; вежливость и культурность операторов и курьеров.'
+            break;
+         case 1:
+            classes.push('fb-block_tright')
+            options.text = 'Товар соответствует описанию на сайте. Доставили на следующий день. Отличная цена в сравнении с другими магазинами'
+            break;
+         case 2:
+            classes.push('fb-block_bleft')
+            options.text = 'Приятные курьеры. Редкие и качественные модели наушников, таких больше нигде не найти'
+            break;
+         case 3:
+            classes.push('fb-block_bright')
+            options.text = 'Сделала заказ ночью, оперативно позвонили подтвердит заказ. Привезли  на следующий день в указанное время. Товар целый, без брака. Отдала чуть меньше 24 тыс., а в других магазинах он стоит от 28-35 тыс.'
+            break;            
+      }
+   
+   .feedback__item.fb-block(class=classes data-id=options.id)
+      .fb-block__inner
+         img.fb-block__img(src=options.img)
+         .fb-block__text= options.text

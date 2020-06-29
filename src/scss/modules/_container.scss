@@ -1,0 +1,62 @@
+.container {
+	$padding: 40px;
+	position: relative;
+	z-index: 1;
+
+	&__inner {
+		box-sizing: border-box;
+		margin: 0 auto;
+		padding: 0 $padding;
+		
+		@media screen and (max-width: 1024px) {
+			padding: 0 20px;
+		}
+
+		&_shop {
+			padding-bottom: 70px;
+		}
+		
+	}
+	
+
+	&_width_desktop &__inner {
+		max-width: 1720px + $padding * 2;
+	}
+	
+	&_theme_bright {
+		background: $brand-color-primary;
+	}
+
+	&_theme_purple {
+		background: $brand-color-purple;
+	}
+	
+	&_theme_grad1 {
+		background: rgb(251,248,240);
+		background: linear-gradient(darken( #fff , 40%), $brand-color-primary 60%, darken( #fff , 40%) 90%);
+	}
+	&_theme_feedback {
+		background: url(../i/bitmapped/blog-category/bg_feedback.jpg) center center;
+		background-size: 25%;
+		animation: 25s Gradient alternate infinite ease-in-out;
+
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			background: #011414;
+			z-index: -1;
+			opacity: .75;
+		}
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 0%
+	}
+	100% {
+		background-position: 100% 100%
+	}
+}

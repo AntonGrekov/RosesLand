@@ -1,0 +1,156 @@
+.slider {
+	position: relative;
+	
+	&__button {
+		position: absolute;
+		top: 50%;
+		z-index: 1;
+
+		margin-top: -22px / 2 + 100px;
+		padding: 0;
+
+		color: #000000;
+
+		background: none;
+		border: none;
+		cursor: pointer;
+		
+		@media screen and (max-width: 1280px) {
+			top: 10%;
+		}
+		
+		&_prev {
+			left: 60px;
+			
+			transform: rotate(180deg);
+		}
+		
+		&_next {
+			right: 60px;
+		}
+		
+		&_disabled {
+			opacity: 0.2;
+
+			cursor: default;
+		}
+	}
+
+	&__button-icon {
+		width: 180px;
+		height: 22px;
+	}
+	
+	&__button-svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+		
+		fill: currentColor;
+	}
+	
+	&__wrap-pagination {
+		height: 0;
+	}
+
+	&__pagination {
+		// border: 1px dashed red;
+		// padding: 20px;
+
+		position: absolute;
+		right: 280px;
+		bottom: 2px;
+		z-index: 1;
+		
+		min-height: 278px;
+
+		font-size: 32px;
+		line-height: 1;
+		font-family: $font-accent;
+		color: #383939;
+		text-align: right;
+		
+		@media screen and (max-width: 1280px) {
+			right: 40px;
+			
+			min-height: 150px;
+		}
+		
+		@media screen and (max-width: 1024px) {
+			font-size: 24px;
+		}
+		
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+
+			width: 2px;
+
+			background: #404141;
+		}
+	}
+
+	&__pagination-item {
+		position: relative;
+
+		display: block;
+		padding: 4px 30px 4px 0;
+
+		cursor: pointer;
+		
+		@media screen and (max-width: 1024px) {
+			padding-right: 15px;
+		}
+		
+		&_active {
+			color: #ffb728;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 1;
+				
+				width: 2px;
+
+				background: #ffb728;
+			}
+		}
+	}
+	
+	&__more {
+		position: absolute;
+		right: 0;
+		bottom: 1%;
+		left: 0;
+		z-index: 1;
+		
+		text-align: center;
+		
+		
+	}
+	
+	&__more-button {
+		display: inline-block;
+		width: 40px;
+		height: 60px;
+		padding: 0;
+
+		background: url(../i/bitmapped/icons/mouse.png) no-repeat 0 0;
+		border: none;
+		
+		cursor: pointer;
+		
+		@media screen and (max-width: 1024px) {
+			width: (40px / 2);
+			height: (60px / 2);
+			
+			background-size: contain;
+		}
+	}
+}

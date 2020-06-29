@@ -1,0 +1,109 @@
+.cart-detailed {
+   transition: opacity 2s;
+   border-radius: 20px;
+   
+   &__inner {
+
+      @include flexbox();
+      @include flex-direction($value: column);
+      @include justify-content($value: space-between);
+
+      padding: 5% 5%;
+   }
+
+   
+   &__title {
+      text-align: center;
+      font-size: 18px;
+
+      color: #fff;
+   }
+
+   &__footer {
+      margin-top: 20px;
+   }
+
+   &__price:after {
+      content: '₽';
+   }
+
+
+   &__row {
+      @include flexbox();
+      @include align-items($value: center);
+      
+      font-size: 12px;
+      color: $brand-color-primary;
+      visibility: hidden;
+      padding: 1% 0;
+      border-bottom: 1px solid #000;
+
+      &_head {
+         color: #fff;
+         font-weight: bold;
+         font-size: 12px;
+         margin: 5% 0;
+         visibility: visible;
+
+         .cart-detailed__price:after {
+            content: '';
+         }
+         
+      }
+
+      &:last-child {
+         border: none;
+      }
+   }
+
+   &__name {
+      @include flex-basis($value: 55%);
+      
+      text-align: left;
+      margin-right: 5%;
+   }
+
+   &__quantity {
+      @include flex-basis($value: 15%);
+      min-width: 40px;
+      text-align: center;
+   }
+
+
+   &__price {
+      @include flex-basis($value: 25%);
+      text-align: center;
+   }
+
+   &__close, &__dummy {
+      @include flex-basis($value: 5%);
+      text-align: center;
+   }
+
+
+   &__row:hover {
+      background: #fff;
+      color: #000;
+      font-weight: 500;
+      cursor: pointer;
+
+      .cart-detailed__close:after {
+         content: 'X';
+         color: red;
+         cursor: pointer;
+         vertical-align: middle;
+      }
+   }
+
+   &__total {
+      font-size: 20px;
+
+      &-value {
+
+         &:after {
+            content: ' ₽';
+
+         }
+      }
+   }
+}

@@ -1,0 +1,23 @@
+.feedback {
+   &__inner {
+      padding-bottom: 5%;
+   }
+
+   &__body {
+
+      position: relative;
+      padding: 0 4%;
+      min-height: 550px;
+
+      background: url(../i/bitmapped/blog-category/separator.png) center center no-repeat;
+      background-size: 30%;
+
+      @media screen and (max-width: 1350px) {
+         min-height: 450px;
+      }
+
+      @media screen and (max-width: 1100px) {
+         background: none;
+      }
+   }
+}

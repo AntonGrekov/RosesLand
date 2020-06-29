@@ -1,0 +1,67 @@
+.feedback-icon {
+   &__inner {
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+   }
+
+   &__main {
+      display: inline-block;
+      position: relative;
+      background: url(../i/bitmapped/blog-category/fb-icon.png) no-repeat center center;
+      background-size: contain;
+      width: 280px;
+      height: 180px;
+      color: #009e2e;
+
+      &:before {
+         content: '';
+         position: absolute;
+         margin: 50px 10px;
+         border-radius: 20px;
+         top: 0;left: 0;bottom: 0;right: 0;
+         border: 2px groove #fff;
+         animation: pulse 1.8s .1s ease-in-out infinite;
+      }
+   }
+
+   &__hand-icon {
+      position: absolute;
+      background: url(../i/bitmapped/blog-category/hand-icon.png) no-repeat;
+      background-size: contain;
+      width: 25px;
+      height: 25px;
+
+      left: 55%; top: 58%;
+      animation: shake-and-click 1.8s infinite;
+   }
+}
+
+@keyframes shake-and-click {
+   0%, 20%, 40%, 60% {
+      transform: translate(0px, 0px) rotate(5deg);
+   }
+   10%, 30%, 50% {
+      transform: translate(0px, 0px) rotate(-5deg);
+   }
+   0% {
+      transform: translate(0px, 0px);
+   }
+   1% {
+      transform: translate(3px, 3px);
+   }
+}
+
+
+@keyframes pulse {
+  20% {
+    opacity: 0.5;
+   }
+  50% {
+    opacity: 0.2; 
+   }
+  100% {
+    opacity: 0;
+    transform: scale(1.3); 
+   } 
+}

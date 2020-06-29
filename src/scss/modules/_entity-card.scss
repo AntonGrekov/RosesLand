@@ -1,0 +1,293 @@
+.entity-card {
+	padding-bottom: 20px;
+
+	text-align: center;
+
+	&__cover {
+		margin-bottom: 20px;
+		
+		text-align: center;
+
+		
+	}
+
+	&__cover-link {
+		outline: none;
+	}
+	
+	&__cover-wrap {
+		position: relative;
+
+		display: inline-block;
+		
+		vertical-align: top;
+		
+		transition: box-shadow 0.2s;
+
+		&_corners {
+
+			&:before, &:after {
+				content: '';
+				position: absolute;
+				border: none;
+				width: 20%; height: 20%;
+
+				transition: all 1s;
+			}
+
+			&:before {
+				left: 0; top: 0;
+				border-left: 2px solid $brand-color-purple;
+				border-top: 2px solid $brand-color-purple;
+			}
+
+			&:after {
+				right: 0; bottom: 0;
+
+				border-right: 2px solid $brand-color-purple;
+				border-bottom: 2px solid $brand-color-purple;
+			}
+		}
+	}
+
+	&:hover &__cover-wrap:before, &:hover &__cover-wrap:after {
+		width: 99.3%; height: 99.3%;
+		border-color: #fff;
+		z-index: 5;
+	}
+	
+	&__cover-overlay {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		
+		@include flexbox();
+		@include justify-content($value: center);
+		@include align-items($value: center);
+
+		font-size: 50px;
+		font-family: $font-accent;
+		color: $brand-color-primary;
+		text-transform: uppercase;
+
+		background: $brand-color-purple-opacify;
+		opacity: 0;
+		
+		transition: opacity 0.2s;
+		
+		@media screen and (max-width: 1024px) {
+			font-size: 30px;
+		}
+	}
+
+	&__cover-wrap:hover {
+		box-shadow: 11px 11px 40px rgba(0, 0, 0, 0.71);
+	}
+
+	&__cover-wrap:hover &__cover-overlay {
+		opacity: 1;
+	}
+	
+	&__cover-wrap-icon {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		
+		@include flexbox();
+		@include justify-content($value: center);
+		@include align-items($value: center);
+	}
+	
+	&__cover-icon {
+		&_play {
+			width: 102px;
+			height: 72px;
+			
+			color: #f61c0d;
+		}
+	}
+
+	&__cover-svg {
+		display: block;
+		max-width: 100%;
+		max-height: 100%;
+		
+		fill: currentColor;
+	}
+	
+	&__image {
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	&__title {
+		margin-bottom: 10px;
+
+		font-weight: 400;
+		font-size: 50px;
+		line-height: 1.1;
+		font-family: $font-accent;
+		text-transform: uppercase;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		@media screen and (max-width: 1440px) {
+			font-size: 40px;
+		}
+		
+		@media screen and (max-width: 1024px) {
+			font-size: 30px;
+		}
+	}
+
+	&__title-link {
+		color: #000000;
+		text-decoration: none;
+		
+		&:hover {
+			color: #000000;
+			text-decoration: underline;
+		}
+	}
+
+	&__description {
+		position: relative;
+		z-index: 5;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 1.5;
+		font-family: $font-main;
+		color: #fff;
+		background: rgba(12, 13, 12, .6);
+		
+		@media screen and (max-width: 1440px) {
+			font-size: 18px;
+		}
+		
+		@media screen and (max-width: 1024px) {
+			font-size: 16px;
+		}
+	}
+	
+	&__price {
+		font-family: $font-accent;
+	}
+
+	&__price-label {
+		font-size: 25px;
+		
+		@media screen and (max-width: 1024px) {
+			min-height: 20px;
+		}
+	}
+	
+	&__price-value {
+		font-size: 35px;
+		
+		@media screen and (max-width: 1024px) {
+			min-height: 30px;
+		}
+	}
+
+	&__price-buybutton {
+		display: block;
+		outline: none;
+		cursor: pointer;
+
+		padding: 5% 1%;
+		margin: 0 auto;
+		background: #000;
+
+		font-size: 24px;
+		color: $brand-color-primary;
+		border-radius: 10px;
+		
+		border: none;
+
+		width: 90%;
+		box-shadow: 6px 7px rgba(0%, 0%, 0%, .4);
+
+		@media screen and (max-width: 1440px) {
+			font-size: 18px;
+		}
+
+		@media screen and (max-width: 1024px) {
+			font-size: 20px;
+		}
+
+
+		&:active {
+			transition: none;
+			box-shadow: 0 2px #666;
+			transform: translateY(7px) translateX(6px);
+		}
+	}
+
+	&__invisible-area {
+		min-height: 80px;
+		visibility: hidden;
+		
+		opacity: 0;
+		transition: opacity 0.2s;
+		
+		@media screen and (max-width: 1024px) {
+			min-height: 0;
+			visibility: visible;
+
+			opacity: 1;
+		}
+	}
+	
+	&:hover &__invisible-area {
+		visibility: visible;
+		
+		opacity: 1;
+	}
+	
+	&:hover {
+			transition: all 1s;
+			transform: scale(1.03) translate(0%, -2%);
+	}
+	
+	&_theme_main &__cover {
+		margin-bottom: 14px;
+	}
+	
+	&_theme_main &__title {
+		margin-bottom: 0;
+
+		font-size: 29px;
+		
+		@media screen and (max-width: 1024px) {
+			min-height: 22px;
+		}
+	}
+	
+	&_color-inherit &__title-link {
+		color: currentColor;
+		
+		&:hover {
+			color: currentColor;
+		}
+	}
+}
+
+
+@keyframes showUp {
+	0% {
+		transform: scale(0.7);
+		opacity: 0;
+	} 
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}

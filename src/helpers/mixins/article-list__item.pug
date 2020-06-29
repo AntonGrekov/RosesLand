@@ -1,0 +1,8 @@
+mixin article-list__item(options)
+	- options = options || {};
+
+	.article-list__item
+		.article-list__cover
+			img.article-list__cover-image(src=options.image, alt="")
+		.article-list__content
+			block

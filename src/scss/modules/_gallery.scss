@@ -1,0 +1,39 @@
+.gallery{
+
+   &__inner {
+
+   }
+
+   &__body {
+         @include flexbox();
+         @include justify-content($value: space-around);
+         @include align-items($value: center);
+
+         @include flex-wrap(wrap);
+
+         text-align: center;
+
+   }
+   
+   &__item {
+
+      @include flex($fg: 0, $fs: 0, $fb: 30%);
+      margin: 5px;
+
+      &-img{
+         width: 100%;
+         height: auto;
+      }
+
+      &-desc {
+         margin-top: 10px;
+      }
+
+      &-text{
+         font-size: 22px;
+         font-weight: 600;
+         letter-spacing: 3.3px;
+         text-transform: uppercase;
+      }
+   }
+}

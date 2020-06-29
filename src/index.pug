@@ -1,0 +1,134 @@
+extends extends/main
+
+block content
+	include helpers/mixins/container
+	include helpers/mixins/entity-card
+	
+	
+
+	main.main
+		.slider.np.swiper-container.js-slider-main
+			.slider__container.swiper-wrapper
+				.slider__block.swiper-slide
+					.slide(style="background-image: url(i/bitmapped/main/slide-1.jpg);")
+						.slide__content
+							.slide__title We are creators <br> Of the Great
+				.slider__block.swiper-slide
+					.slide(style="background-image: url(i/bitmapped/main/slide-2.jpg);")
+						.slide__content
+							.slide__title.slide__title_bg-black Where words fail<br> music speaks
+			button.slider__button.slider__button_prev(type="button", title="Предыдущий")
+				.slider__button-icon
+					svg.slider__button-svg
+						use(xlink:href='#icon-long-arrow-right')
+			button.slider__button.slider__button_next(type="button", title="Следующий")
+				.slider__button-icon
+					svg.slider__button-svg
+						use(xlink:href='#icon-long-arrow-right')
+			.slider__wrap-pagination
+				.slider__pagination
+			.slider__more
+				button.slider__more-button.js-slider-more(type="button")
+		
+
+		+container({width: 'desktop', theme: 'grad1', mod: "shop"})
+			section.section.section_compact.js-section
+				.section__head
+					.heading
+						h1.heading__title.title.title_main Наушники
+				.section__body
+					.entity-cards.grid-4-gutterMedium.grid-4-gutterMedium_tablet-2_handsetL-1.js-goods
+						- var counter = 0;
+						while counter < 8
+							.col
+								+entity-card({
+									title: 'Название букета',
+									image: 'i/bitmapped/demo/blog-1.jpg',
+									price: '1850',
+									invisibleArea: true,
+									theme: 'main',
+									buyButton: true,
+									corners: true
+								})
+							- counter++;
+
+		.alternative-layout
+			.alternative-layout__section.alternative-layout__section_blog.container.container_width_desktop
+				.alternative-layout__section-inner.container__inner
+					.alternative-layout__head
+						h2.alternative-layout__head-title.title.title_main
+							a.alternative-layout__head-title-link.title__link(href="javascript:void(0);") Блог
+					.alternative-layout__body
+						.entity-cards.grid-3-gutterLarge_tabletS-1
+							.col
+								+entity-card({
+									title: 'Свадебное оформление',
+									image: 'i/bitmapped/main/wedding-decoration.jpg',
+									description: 'Классический реализм изящно иллюстрирует композиционный модернизм. Онтологический статус искусства монотонно заканчивает незначительный структурализм.',
+									colorInherit: true
+								})
+							.col
+								+entity-card({
+									title: 'Букеты для фотосъемок',
+									image: 'i/bitmapped/main/house-decoration.jpg',
+									description: 'Классический реализм изящно иллюстрирует композиционный модернизм. Онтологический статус искусства монотонно заканчивает незначительный структурализм.',
+									colorInherit: true
+								})
+							.col
+								+entity-card({
+									title: 'Украшение дома',
+									image: 'i/bitmapped/main/house-decoration.jpg',
+									description: 'Классический реализм изящно иллюстрирует композиционный модернизм. Онтологический статус искусства монотонно заканчивает незначительный структурализм.',
+									colorInherit: true
+								})
+						h2.alternative-layout__head-title.title.title_main
+							a.alternative-layout__head-title-link.title__link(href="javascript:void(0);") Видео
+					.alternative-layout__body
+						.entity-cards.grid-3-gutterLarge_tabletS-1
+							.col
+								+entity-card({
+									title: 'Как мы это делаем',
+									image: 'i/bitmapped/main/how-we-do.jpg',
+									play: true
+								})
+							.col
+								+entity-card({
+									title: 'Свадебный букет',
+									image: 'i/bitmapped/main/wedding-bouquet.jpg',
+									play: true
+								})
+							.col
+								+entity-card({
+									title: 'Немного нового',
+									image: 'i/bitmapped/main/other-new.jpg',
+									play: true
+								})
+
+		+container({width: 'desktop', theme: 'feedback'})
+			section.section
+				.section__head
+					.heading
+						h1.heading__title.title.title_main.title_color-white.title_shadow-white
+							a.title__link(href="javascript:void(0)") Отзывы
+						.heading__more.feedback-icon
+							.feedback-icon__inner
+								.feedback-icon__main Нажмите на отзыв
+								.feedback-icon__hand-icon 
+				.section__body
+					.feedback
+						include helpers/mixins/feedback-item
+						.feedback__inner
+							.feedback__body
+								- var i = 0;
+								while i < 4
+									+feedback-item({
+										img:  'i/bitmapped/blog-category/feedback-' + i + '.jpg',
+										text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. 		Aliquid quasi culpa optio veritatis nobis sed nisi saepe et ipsam eos?',
+										class: i,
+										id: i
+									})
+									- i++;
+	include modules/contact
+
+block scripts
+	script(src="scripts/feedbacks.js")

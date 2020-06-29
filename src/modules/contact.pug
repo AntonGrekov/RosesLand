@@ -1,0 +1,65 @@
+include ../helpers/mixins/container
+
+.section.section_no-spacing
+	.section__head
+		+container({
+		    width: 'desktop',
+		    theme: 'purple'
+		})
+			.title.title_bright.title_shadow-white Контакты
+	.section__body
+		+container({width: 'desktop'})
+			.contact
+				.contact__info
+					.contact-card
+						.contact-card__block
+							.contact-card__label Адрес:
+							.contact-card__value #{config.address}
+						.contact-card__block
+							.contact-card__label Телефон:
+							.contact-card__value.contact-card__value_nowrap #{config.phone}
+				.contact__form
+					include ../helpers/mixins/from-field
+					include ../helpers/mixins/switch
+					form.form.form_contact.form_theme_bright
+						.form__body
+							.form__group.form__group_layout_two-column
+								.form__group-block
+									+from-field({
+										label: 'Имя',
+										id: 'contact-name',
+										theme: 'bright',
+										required: true
+									})
+								.form__group-block
+									+from-field({
+										label: 'Телефон',
+										id: 'contact-phone',
+										theme: 'bright',
+										required: true
+									})
+							.form__group
+								+from-field({
+									label: 'E-mail',
+									id: 'contact-email',
+									theme: 'bright',
+									required: true
+								})
+							.form__group.form__group_spacing_small
+								+from-field({
+									placeholder: 'Сообщение',
+									id: 'contact-name',
+									theme: 'bright',
+									type: 'textarea'
+								})
+							.form__group
+								+switch({
+									type: 'checkbox',
+									label: 'Я согласен на обработку персональных данных *',
+									id: 'agreement',
+									theme: 'bright'
+                                })
+						.form__footer
+							button.button.button_width_wide.button_theme_bright(type="submit") Отправить
+		#map.map
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF_rg2ZfNhSmffZu5w6OgErKCFJi_goI8&callback=initMap", async, defer)

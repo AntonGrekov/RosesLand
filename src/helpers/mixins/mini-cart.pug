@@ -1,0 +1,35 @@
+mixin mini-cart(options)
+   - options = options || {}
+
+   .mini-cart 
+      .mini-cart__inner
+         .mini-cart__body
+            .mini-cart__icon
+               svg.mini-cart__icon-svg
+                  use(xlink:href='#icon-cart')
+            .mini-cart__count.js-mini-cart__count 
+            if options.label
+               .mini-cart__label= options.label
+            .mini-cart__hidden.cart-detailed
+               .cart-detailed__inner
+                  .cart-detailed__head
+                     h3.cart-detailed__title Корзина
+                     .cart-detailed__row.cart-detailed__row_head
+                        .cart-detailed__name Название товара
+                        .cart-detailed__quantity Кол-во
+                        .cart-detailed__price Цена
+                        .cart-detailed__dummy
+                  .cart-detailed__body
+                     .cart-detailted__row.cart-detailted__row_empty.js-cart-detailed__row_empty
+                        .cart-detailed__name В корзине пусто
+                     .cart-detailed__row.js-cart-detailed__row
+                        .cart-detailed__name asd
+                        input(type="number" min="1").cart-detailed__quantity
+                        .cart-detailed__price 
+                        .cart-detailed__close.js-cart-detailed__close
+                  .cart-detailed__footer
+                     .cart-detailed__total
+                        span.cart-detailed__total-text Итого: 
+                        span.cart-detailed__total-value 2500
+
+

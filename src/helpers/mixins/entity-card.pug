@@ -1,0 +1,43 @@
+mixin entity-card(options)
+	- 
+		options = options || {};
+		var classes = [], cover_classes = [];
+
+
+	if options.theme
+		- classes.push('entity-card_theme_' + options.theme);
+
+	if options.colorInherit
+		- classes.push('entity-card_color-inherit');
+	if options.corners
+		- cover_classes += "entity-card__cover-wrap_corners";
+
+	.entity-card(class=classes)
+		.entity-card__cover
+			a.entity-card__cover-link(href="blog-detail.html")
+				.entity-card__cover-wrap(class=cover_classes)
+					img.entity-card__image(src=options.image, alt="")
+					.entity-card__cover-overlay Подробнее
+
+					if options.play
+						.entity-card__cover-wrap-icon
+							.entity-card__cover-icon.entity-card__cover-icon_play
+								svg.entity-card__cover-svg
+									use(xlink:href='#icon-youtube-play')
+		.entity-card__title
+			a.entity-card__title-link(href="blog-detail.html")= options.title
+
+		if options.description
+			.entity-card__description= options.description
+
+		if options.invisibleArea
+			.entity-card__invisible-area
+
+				if options.price
+					.entity-card__price
+						span.entity-card__price-label от:&nbsp;
+						span.entity-card__price-value #{options.price}:&nbsp;
+							span.b-rub Р
+						if options.buyButton
+							button.entity-card__price-buybutton Добавить в корзину
+					

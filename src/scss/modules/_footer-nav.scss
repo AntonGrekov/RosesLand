@@ -1,0 +1,47 @@
+.footer-nav {
+	line-height: 1;
+	font-family: $font-accent;
+
+	&__title {
+		margin-bottom: 10px;
+
+		font-size: 40px;
+		color: $brand-color-tetriary;
+		
+		@media screen and (max-width: 600px) {
+			font-size: 25px;
+		}
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+
+		list-style-type: none;
+
+		font-size: 27px;
+		
+		
+		@media screen and (max-width: 600px) {
+			font-size: 20px;
+		}
+	}
+	
+	&__item {
+		margin-bottom: 6px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__link {
+		color: #989898;
+		text-decoration: none;
+		
+		&:hover {
+			color: #ffffff;
+			text-decoration: underline;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+.about {
+	@include flexbox();
+	@include justify-content($value: space-between);
+
+	&__cover {
+		max-width: 500px;
+		margin: 0 40px 0 0;
+	}
+	
+	&__content {
+		max-width: 1000px;
+	}
+}

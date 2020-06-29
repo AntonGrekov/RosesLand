@@ -1,0 +1,70 @@
+.button {
+	box-sizing: border-box;
+	display: inline-block;
+	padding: 13px 20px;
+	
+	font-weight: 400;
+	font-size: 25px;
+	line-height: 1;
+	font-family: $font-accent;
+	color: #000000;
+	text-transform: uppercase;
+	text-decoration: none;
+
+	border: none;
+	background: $brand-color-primary;
+	box-shadow: 0 0 13px rgba(0, 0, 0, 0.52);
+	cursor: pointer;
+	
+	transition: background 0.2s, box-shadow 0.2s;
+	
+	&:hover {
+		color: #000000;
+		text-decoration: none;
+
+		background: $brand-color-primary-hover;
+	}
+
+	&:active {
+		box-shadow: 0 0 0 rgba(0, 0, 0, 0.52);
+	}
+
+	&_theme_bright {
+		padding: 5px;
+
+		font-size: 30px;
+		color: #ffffff;
+		
+		box-shadow: none;
+		background: $brand-color-primary;
+		background: linear-gradient(to right, $brand-color-primary 0%, #cfe03e 100%);
+	}
+	
+	&_theme_white {
+		background: #ffffff;
+		
+		&:hover {
+			background: darken(#ffffff, 10%);
+		}
+	}
+	
+	&_width_wide {
+		display: block;
+		width: 100%;
+
+		text-align: center;
+	}
+	
+	&_size_very-large {
+		padding: 5px 100px;
+
+		font-size: 70px;
+		font-family: $font-accent-alt;
+		text-transform: uppercase;
+		
+		@media screen and (max-width: 1480px) {
+			padding-right: 40px;
+			padding-left: 40px;
+		}
+	}
+}

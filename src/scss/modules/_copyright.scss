@@ -1,0 +1,13 @@
+.copyright {
+	display: block;
+	max-width: 860px;
+
+	font-size: 18px;
+	line-height: 1.2;
+	font-family: $font-accent-alt;
+	color: #989898;
+	
+	@media screen and (max-width: 600px) {
+		font-size: 14px;
+	}
+}

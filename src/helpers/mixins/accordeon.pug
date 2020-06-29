@@ -1,0 +1,18 @@
+mixin accordeon(options)
+	- options = options || {};
+	- var classes = [];
+	- var bodyStyle = options.active ? 'display: block;' : 'display: none;';
+
+	if options.active
+		- classes.push('accordeon_active');
+
+	.accordeon.js-accordeon(class=classes)
+		.accordeon__head
+			.accordeon__title
+				span.accordeon__title-link= options.title
+				span.accordeon__title-icon
+					svg.accordeon__title-svg
+						use(xlink:href='#icon-chevron-top')
+		.accordeon__body(style=bodyStyle)
+			.accordeon__content
+				block

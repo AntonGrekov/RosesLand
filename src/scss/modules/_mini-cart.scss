@@ -1,0 +1,86 @@
+.mini-cart {
+
+   &__body {
+
+      position: relative;
+
+      &:hover .mini-cart__hidden {
+         visibility: visible;
+         opacity: .9;
+      }
+
+   }
+
+   &__icon {
+      cursor: pointer;
+      height: 40px;
+      width: 40px;
+
+      &-svg {
+         width: 100%;
+         height: 100%;
+
+         fill: #fff;
+      }
+   }
+
+   &__count {
+      visibility: hidden;
+
+      text-align: center;
+      position: absolute;
+      top: -6px;
+      right: -10px;
+
+      color: #000;
+      font-weight: bold;
+      font-size: 10px;
+
+      &:before {
+         content: '';
+         position: absolute;
+         top: -3px;
+         left: -5px;
+
+         width: 15px;
+         height: 15px;
+         border-radius: 20px;
+         background: $brand-color-tetriary;
+         opacity: .7;
+         border: 1px solid #000;
+         z-index: -1;
+      }
+
+   }
+
+   &__label {
+      width: 100%;
+      text-align: center;
+      font-size: 23px;
+   }
+
+   &__hidden {
+      visibility: hidden;
+      cursor: normal;
+      opacity: 0;
+
+      position: absolute;
+      top: 70px;
+      left: -330px;
+
+      width: 400px;
+      background: #333;
+      z-index: 5;
+      transition: opacity 2s;
+
+      &:before {
+         content: '';
+         position: absolute;
+         top: -50px;
+
+         width: 500px;
+         height: 50px;
+      }
+   }
+
+}

@@ -1,0 +1,125 @@
+include ../helpers/mixins/footer-nav
+include ../helpers/mixins/container
+
+-
+	var footerNavItems = {
+		one: {
+			title: 'О сайте',
+			list: [
+				{
+				title: 'Доставка',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'О магазине',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Контакты',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Блог',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Видео',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Карта сайта',
+				url: 'javascript:void(0);'
+				}
+			]
+		},
+		two: {
+	        title: 'Букеты:',
+			list: [
+				{
+				title: 'Специальные предложения',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Монобукет',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Композиция',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Букет невесты',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Индивидуальный заказ',
+				url: 'javascript:void(0);'
+				}
+			]
+		},
+		three: {
+	        title: 'Букеты:',
+			list: [
+				{
+				title: 'Программа лояльности',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Корпоративным клиентам',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Инструкция свежести',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Вакансии',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'F.A.Q.',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Оплата',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Возврат',
+				url: 'javascript:void(0);'
+				},
+				{
+				title: 'Юридическая информация',
+				url: 'javascript:void(0);'
+				}
+			]
+		}
+	};
+
+footer.footer.container.container_width_desktop
+	.footer__inner.container__inner
+		.footer__row
+			.footer__col
+				+footer-nav(footerNavItems.one)
+			.footer__col
+				+footer-nav(footerNavItems.two)
+			.footer__col
+				+footer-nav(footerNavItems.three)
+		.footer__row_align-left
+			.footer__col
+				.contact-card
+					.contact-card__block
+						.contact-card__label Адрес:
+						.contact-card__value #{config.address}
+					.contact-card__block
+						.contact-card__label Телефон:
+						.contact-card__value #{config.phone}
+					.contact-card__block.contact-card__block_spacing
+						include ../helpers/mixins/logo
+						+logo()
+					.contact-card__block
+						include ../helpers/mixins/socials
+						+socials()
+		.footer__row
+			.footer__col.footer__col_no-spacing
+				small.copyright &copy; 2016&ndash;2018 «rosesland». Перепечатка, использование и цитирование материалов сайта без согласования с владельцами запрещены. Информация на данном интернет-сайте носит сугубо информационный характер и не является публичной офертой, определяемой положениями Статьи 437 (2) ГК РФ

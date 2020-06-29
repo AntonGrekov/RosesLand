@@ -1,0 +1,22 @@
+.logo {
+	display: inline-block;
+	
+	vertical-align: top;
+	text-decoration: none;
+	
+	&:hover {
+		text-decoration: none;
+	}
+	
+	&__image {
+		display: block;
+		max-width: 70px;
+		height: 70px;
+		width: 70px;
+		
+		@media screen and (max-width: 1024px){
+			height: 50px;
+			max-width: 50px;
+		}
+	}
+}

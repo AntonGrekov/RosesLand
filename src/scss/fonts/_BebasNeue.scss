@@ -1,0 +1,56 @@
+$font-path: "../fonts/BebasNeue/";
+
+@font-face {
+	font-family: 'Bebas Neue';
+	src: url('#{$font-path}BebasNeueRegular.eot');
+	src: local('Bebas Neue Regular'), local('BebasNeueRegular'),
+	url('#{$font-path}BebasNeueRegular.eot?#iefix') format('embedded-opentype'),
+	url('#{$font-path}BebasNeueRegular.woff') format('woff'),
+	url('#{$font-path}BebasNeueRegular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bebas Neue';
+	src: url('#{$font-path}BebasNeueBold.eot');
+	src: local('Bebas Neue Bold'), local('BebasNeueBold'),
+	url('#{$font-path}BebasNeueBold.eot?#iefix') format('embedded-opentype'),
+	url('#{$font-path}BebasNeueBold.woff') format('woff'),
+	url('#{$font-path}BebasNeueBold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bebas Neue';
+	src: url('#{$font-path}BebasNeueLight.eot');
+	src: local('Bebas Neue Light'), local('BebasNeueLight'),
+	url('#{$font-path}BebasNeueLight.eot?#iefix') format('embedded-opentype'),
+	url('#{$font-path}BebasNeueLight.woff') format('woff'),
+	url('#{$font-path}BebasNeueLight.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bebas Neue';
+	src: url('#{$font-path}BebasNeue-Thin.eot');
+	src: local('Bebas Neue Thin'), local('BebasNeue-Thin'),
+	url('#{$font-path}BebasNeue-Thin.eot?#iefix') format('embedded-opentype'),
+	url('#{$font-path}BebasNeue-Thin.woff') format('woff'),
+	url('#{$font-path}BebasNeue-Thin.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bebas Neue Book';
+	src: url('#{$font-path}BebasNeueBook.eot');
+	src: local('Bebas Neue Book'), local('BebasNeueBook'),
+	url('#{$font-path}BebasNeueBook.eot?#iefix') format('embedded-opentype'),
+	url('#{$font-path}BebasNeueBook.woff') format('woff'),
+	url('#{$font-path}BebasNeueBook.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

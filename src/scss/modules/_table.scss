@@ -1,0 +1,30 @@
+.table {
+	border-collapse: collapse;
+
+	&_theme_pair {
+		border: none;
+	}
+
+	&_theme_pair td {
+		padding: 2px 20px;
+
+		font-weight: 300;
+		font-size: 30px;
+		line-height: 1.1;
+		font-family: $font-accent;
+		
+		border: none;
+		border-bottom: 1px solid #a6a6a6;
+		
+		&:first-child {
+			padding-left: 0;
+
+			font-weight: 400;
+			font-family: $font-accent-alt;
+		}
+		
+		&:last-child {
+			padding-right: 40px;
+		}
+	}
+}

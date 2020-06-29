@@ -1,0 +1,16 @@
+.header-list {
+	@include flexbox();
+	@include align-items($value: center);
+	
+	&__item {
+		margin-right: 40px;
+		
+		@media screen and (max-width: 1024px) {
+			margin-right: 20px;
+		}
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

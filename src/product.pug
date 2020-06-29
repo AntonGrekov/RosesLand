@@ -1,0 +1,146 @@
+extends extends/default
+
+block content
+	include helpers/mixins/container
+	include helpers/mixins/breadcrumbs
+	include helpers/mixins/entity-card
+
+	-
+		var breadcrumbs = {
+			extended: 'heading',
+			list: [
+				{
+					title: 'Розы',
+					url: 'javascript:void(0);'
+				},
+				{
+					title: 'Название букета'
+				}
+			]
+		}
+
+	main.main
+		+container({width: 'desktop'})
+			article.section
+				.section__head
+					.heading
+						h1.heading__title.title Название
+						+breadcrumbs(breadcrumbs)
+				.section__body
+					.product
+						.product__cover
+							.simple-gallery
+								.simple-gallery__cover(style="background-image: url('i/bitmapped/demo/product.jpg');")
+								.simple-gallery__nav.grid-3
+									.simple-gallery__nav-item.col
+										.simple-gallery__nav-image(style="background-image: url('i/bitmapped/demo/product.jpg');")
+									.simple-gallery__nav-item.col
+										.simple-gallery__nav-image(style="background-image: url('i/bitmapped/demo/product.jpg');")
+									.simple-gallery__nav-item.col
+										.simple-gallery__nav-image(style="background-image: url('i/bitmapped/demo/product.jpg');")
+						.product__detail
+							.product-detail
+								.product-detail__primary
+									.product-detail__primary-col
+										.product-config
+											.product-config__block.product-config__block_horizontal
+												.product-config__price 1850
+													span.product-config__price-currency руб
+												.product-config__count.form-count.form-count_size_large
+													input.form-count__field(type="number", min="1", value="1")
+													.form-count__nav
+														button.form-count__nav-button.js-count-top(type="button") +
+														button.form-count__nav-button.js-count-bottom(type="button") -
+											.product-config__block
+												include helpers/mixins/switch
+												.switch-group
+													.switch-group__block
+														+switch({
+                                                            label: '15 роз <span class="switch__text-small">как на фото</span>',
+                                                            id: 'product-choice-1',
+                                                            name: 'product-choice',
+                                                            type: 'radio'
+                                                        })
+													.switch-group__block
+														+switch({
+                                                            label: '25 роз',
+                                                            id: 'product-choice-2',
+                                                            name: 'product-choice',
+                                                            type: 'radio'
+                                                        })
+													.switch-group__block
+														+switch({
+                                                            label: '35 роз',
+                                                            id: 'product-choice-3',
+                                                            name: 'product-choice',
+                                                            type: 'radio'
+                                                        })
+													.switch-group__block
+														+switch({
+                                                            label: '51 роз',
+                                                            id: 'product-choice-4',
+                                                            name: 'product-choice',
+                                                            type: 'radio'
+                                                        })
+													.switch-group__block
+														+switch({
+                                                            label: '101 роз',
+                                                            id: 'product-choice-5',
+                                                            name: 'product-choice',
+                                                            type: 'radio'
+                                                        })
+									.product-detail__primary-col
+										button.button.button_theme_white.button_size_very-large(type="button") Купить
+								.product-detail__secondary
+									.tab.js-tab
+										ul.tab__nav
+											li.tab__nav-item.tab__nav-item_active
+												a.tab__nav-link(href="#tab-1") Лента
+											li.tab__nav-item
+												a.tab__nav-link(href="#tab-2") Еще что-то
+											li.tab__nav-item
+												a.tab__nav-link(href="#tab-3") Крафтовая бумага
+											li.tab__nav-item
+												a.tab__nav-link(href="#tab-4") Белая бумага
+										.tab__content
+											#tab-1.tab__content-block.tab__content-block_active
+												p Пародия монотонно просветляет онтогенез. Иррациональное в творчестве имеет фарс, таким образом, все перечисленные признаки архетипа и мифа подтверждают, что действие механизмов мифотворчества сродни механизмам художественно-продуктивного мышления. Комплекс агрессивности неустойчив.
+											#tab-2.tab__content-block
+												p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet at beatae commodi, corporis debitis doloremque dolores eos error eum excepturi exercitationem expedita fuga fugit hic id ipsum iure iusto laudantium nesciunt nisi non officia officiis perspiciatis quam quis quisquam recusandae rem, repudiandae rerum sed suscipit tenetur velit! Cupiditate, laboriosam?
+											#tab-3.tab__content-block
+												p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti id iure laborum, modi numquam officia quos sequi suscipit temporibus vitae voluptatem? Corporis debitis, pariatur quidem repellat repudiandae suscipit vel!
+											#tab-4.tab__content-block
+												p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aspernatur cupiditate ex modi repellat tempore?
+								.product-detail__tertiary
+									include helpers/mixins/accordeon
+									.accordeon-list
+										.accordeon-list__item
+											+accordeon({
+											    title: 'О букете',
+												active: true
+											})
+												table.table.table_theme_pair
+													tbody
+														tr
+															td Цвет
+															td Красный
+														tr
+															td Упаковка
+															td Крафт бумага, Ленты
+														tr
+															td Высота
+															td 60 см
+														tr
+															td Диаметр
+															td 90 см
+										.accordeon-list__item
+											+accordeon({
+											    title: 'Инструкция свежести'
+											})
+												p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate officia quibusdam sed vero. Nemo, neque.
+										.accordeon-list__item
+											+accordeon({
+											    title: 'Доставка'
+											})
+												p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, quo, repellat! Accusantium ad atque delectus eius eum excepturi nemo tenetur.
+

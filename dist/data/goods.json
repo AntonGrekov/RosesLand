@@ -1,0 +1,51 @@
+{
+   "1": 
+   {
+      "name"   : "Beats Studio3 Wireless Defiant Black-Red",
+      "price"  : "26490",
+      "image"  : "i/bitmapped/demo/1.png"
+   },
+
+   "2": {
+      "name": "Bose QuietComfort 35 II Wireless Headphones",
+      "price": "27990",
+      "image": "i/bitmapped/demo/6.png"            
+   },
+
+   "3": {
+      "name": "Bluetooth Monster ROC Sport Over-Ear Black Platinum",
+      "price": "37000",
+      "image": "i/bitmapped/demo/3.png"
+   },
+
+   "4": {
+      "name": "Bluetooth Sony WI-C400/BZ",
+      "price": "15550",
+      "image": "i/bitmapped/demo/4.png"
+   },
+
+   "5": {
+      "name": "Audio-Technica ATH-DSR7BT",
+      "price": "27990",
+      "image": "i/bitmapped/demo/5.png"
+   },
+
+   "6": {
+      "name": "Bluetooth Sony WH-CH700N Black",
+      "price": "15000",
+      "image": "i/bitmapped/demo/2.png"
+   },
+
+   "7": {
+      "name": "Bluetooth Sony WH-1000XM3 Silver",
+      "price": "39900",
+      "image": "i/bitmapped/demo/7.png"
+   },
+   "8": {
+      "name": "Bluetooth Master&Dynamic MW60B1",
+      "price": "39850",
+      "image": "i/bitmapped/demo/8.png"
+   }
+
+
+}

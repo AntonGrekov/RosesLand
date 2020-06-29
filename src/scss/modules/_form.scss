@@ -1,0 +1,78 @@
+.form {
+	&__body {
+		&_flex-column {
+			@include flexbox();
+			@include flex-wrap($value: wrap);
+			
+			@media screen and (max-width: 1024px) {
+				display: block;
+			}
+		}
+	}
+	
+	&__body-col {
+		margin-right: 100px;
+		margin-bottom: 40px;
+		
+		@media screen and (max-width: 1024px) {
+			margin-right: 0;
+		}
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__group {
+		margin-bottom: 40px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&_layout_two-column {
+			@include flexbox();
+			@include justify-content($value: space-between);
+		}
+	}
+	
+	&__group_layout_two-column &__group-block {
+		@include flex($fg: 1);
+		margin: 0 20px;
+		
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__footer {
+		margin-top: 26px;
+	}
+	
+	&_contact {
+		padding: 20px 40px;
+		
+		background: #ffffff;
+		box-shadow: 11px 11px 40px rgba(0, 0, 0, 0.71);
+	}
+
+	&_theme_bright &__group {
+		margin-bottom: 24px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		&_spacing_small {
+			margin-bottom: 18px;
+		}
+	}
+
+	&_theme_bright &__footer {
+		margin-top: 12px;
+	}
+}

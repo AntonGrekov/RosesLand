@@ -1,0 +1,26 @@
+mixin breadcrumbs__item(options)
+	- options = options || {};
+
+	.breadcrumbs__item
+		if options.url
+			a.breadcrumbs__link(href=options.url)= options.title
+		else
+			span.breadcrumbs__text= options.title
+
+mixin breadcrumbs(options)
+	- options = options || {};
+	- var classes = [];
+
+	if options.extended
+		- classes.push(options.extended + '__breadcrumbs');
+
+	.breadcrumbs(class=classes)
+		+breadcrumbs__item({    
+            title: 'Главная',
+            url: 'index.html'
+        })
+		each item in options.list
+			+breadcrumbs__item({
+				title: item.title,
+				url: item.url
+			})
