@@ -24,7 +24,7 @@
     "jstransformer-markdown-it": "^2.1.0",
     "load-grunt-tasks": "^4.0.0",
     "webpack": "^4.28.4",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "gridlex": "^2.7.1",
